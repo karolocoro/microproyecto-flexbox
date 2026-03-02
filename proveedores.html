@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proveedores - ACME</title>
+<link rel="stylesheet" href="stylkes.css">
+</head>
+<body>
+
+<div class="layout">
+
+   
+    <aside class="sidebar">
+        <div>
+            <h2>Acme S.A.S</h2>
+            <p class="subtitle">Sistema de gestión</p>
+
+            <nav>
+                <a href="Principal.html">Principal</a>
+                <a href="Productos.html">Productos</a>
+                <a href="Clientes.html">Clientes</a>
+                <a href="Proveedores.html" class="active">Proveedores</a>
+            </nav>
+        </div>
+
+        <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+    </aside>
+
+  
+    <main class="content">
+
+        <div class="header-clientes">
+            <div>
+                <h2>Gestión de Proveedores</h2>
+                <p>Sistema de gestión de proveedores</p>
+            </div>
+
+            <div class="acciones-top">
+                <button class="btn-secundario" onclick="window.location.href='cotizacionesP.html'"> Cotización</button>
+                <button class="btn-primario" onclick="abrirModalProveedor()">+ Nuevo Proveedor</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h3>Proveedores</h3>
+            <p>Gestión de proveedores y contactos</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laboratorios Pharma</td>
+                        <td>ventas@pharma.com</td>
+                        <td>+57 301 234 5678</td>
+                        <td>Zona Industrial, Bogotá</td>
+                        <td>
+                            <button class="btn-tabla editar-proveedor">Editar</button>
+                          <button class="btn-tabla eliminar-proveedor">Eliminar</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Insumos Hospitalarios</td>
+                        <td>comercial@insumos.com</td>
+                        <td>+57 304 456 7890</td>
+                        <td>Calle 50 #45-67, Medellín</td>
+                        <td>
+                            <button class="btn-tabla editar-proveedor">Editar</button>
+                              <button class="btn-tabla eliminar-proveedor">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      
+<div id="modalProveedor" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModalProveedor()">X</span>
+    <h2>Proveedor</h2>
+
+    <form class="form-proveedor">
+      <input type="text" placeholder="Nombre *" required>
+      <input type="email" placeholder="Email *" required>
+      <input type="text" placeholder="Teléfono *" required>
+      <input type="text" placeholder="Dirección *" required>
+
+      <div class="botones-modal">
+        <button type="button" class="btn-secundario" onclick="cerrarModalProveedor()">Cancelar</button>
+        <button type="submit" class="btn-primario">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+    </main>
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cotizaciones Clientes - ACME</title>
+<link rel="stylesheet" href="stylkes.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div>
+      <h2>Acme S.A.S</h2>
+      <p class="subtitle">Sistema de gestión</p>
+
+      <nav>
+        <a href="Principal.html">Principal</a>
+        <a href="Productos.html">Productos</a>
+        <a href="Clientes.html" class="active">Clientes</a>
+        <a href="Proveedores.html">Proveedores</a>
+      </nav>
+    </div>
+
+    <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content">
+
+    <div class="header-clientes">
+      <div>
+        <h2>Gestión de Cotizaciones</h2>
+        <p>Sistema de cotizaciones para clientes</p>
+      </div>
+
+      <div class="acciones-top">
+       <button onclick="abrirModalCotizacion()">+ Nueva cotización</button>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table class="tabla-cotizaciones">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Fecha</th>
+      <th>Método de pago</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Juan Pérez</td>
+      <td>Paracetamol</td>
+      <td>2</td>
+      <td>$15.000</td>
+      <td>10/10/2024</td>
+      <td>Nequi</td>
+      <td>
+        <button class="btn-tabla editar-cotizacion">Editar</button>
+        <button class="btn-tabla eliminar-cotizacion">Eliminar</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Clínica El Rosario</td>
+      <td>Jeringas</td>
+      <td>500</td>
+      <td>$1.800.000</td>
+      <td>08/10/2024</td>
+      <td>Efectivo</td>
+      <td>
+        <button class="btn-tabla editar-cotizacion">Editar</button>
+        <button class="btn-tabla eliminar-cotizacion">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+     <div id="modalCotizacion" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModalCotizacion()">X</span>
+
+    <h2>Nueva venta / cotización</h2>
+    <p>Completa los campos para realizar la cotización</p>
+
+    <form class="form-cotizacion">
+      <input type="text" placeholder="Nombre *" required>
+      <input type="text" placeholder="Producto *" required>
+      <input type="number" placeholder="Cantidad *" required>
+      <input type="number" placeholder="Precio total *" required>
+      <input type="date" required>
+      <input type="text" placeholder="Método de pago *" required>
+
+      <div class="botones-modal">
+        <button type="button" class="btn-secundario" onclick="cerrarModalCotizacion()">Cancelar</button>
+        <button type="submit" class="btn-primario">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+  </main>
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>

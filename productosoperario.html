@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos - Operario</title>
+<link rel="stylesheet" href="stylkes.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div>
+      <h2>Acme S.A.S</h2>
+<p class="subtitle">Sistema de gestión</p>
+<p class="subtitle">Panel Operario</p>
+
+      <nav>
+        <a href="principaloperario.html">Información</a>
+        <a href="productosoperario.html" class="active">Productos</a>
+         <a href="ordenesdetrabajo.html">ordenesdetrabajo</a>
+      </nav>
+    </div>
+
+    <button class="logout" onclick="location.href='login.html'">
+      Cerrar sesión
+    </button>
+  </aside>
+
+  
+  <main class="content">
+
+
+      <div>
+        <h2>Información de productos</h2>
+        <p>Estado actual del inventario</p>
+      </div>
+    
+
+
+    <input type="text"
+     id="buscarProducto" 
+     placeholder="Buscar producto..."
+      style="padding:8px; width:300px; border-radius:6px; border:1px solid #ccc;"
+     onkeyup="buscarProducto()"
+     >
+
+
+    <div class="table-container">
+      <table >
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Categoria</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+
+        <tbody  >
+          <tr>
+            <td>Paracetamol</td>
+            <td>120</td>
+            <td>Medicamentos</td>
+            <td>
+              <span class="estado bueno">Bueno</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Alcohol antiséptico</td>
+            <td>15</td>
+            <td>Insumos médicos</td>
+            <td>
+              <span class="estado critico">Crítico</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Guantes quirúrgicos</td>
+            <td>300</td>
+            <td>Protección</td>
+            <td>
+              <span class="estado bueno">Bueno</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

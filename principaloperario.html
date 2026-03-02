@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Operario - ACME</title>
+<link rel="stylesheet" href="stylkes.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Acme S.A.S</h2>
+    <p class="subtitle">Sistema de gestión</p>
+    <p class="subtitle">Panel Operario</p>
+
+    <nav>
+      <a href="principaloperario.html" class="active">Información</a>
+      <a href="productosoperario.html">Productos</a>
+       <a href="ordenesdetrabajo.html">ordenesdetrabajo</a>
+
+    </nav>
+
+    <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content">
+
+    <h2>Información de Clientes</h2>
+    <p>Resumen general de clientes y número de cotizaciones</p>
+
+<div style="margin-bottom:15px;">
+  <input 
+    type="text" 
+    id="buscarCliente" 
+    placeholder="Buscar cliente por nombre o correo..."
+    style="padding:8px; width:300px; border-radius:6px; border:1px solid #ccc;"
+    onkeyup="buscarCliente()"
+  >
+</div>
+    <div class="table-container">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>N° Cotizaciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>juan@gmail.com</td>
+            <td>3</td>
+          </tr>
+
+          <tr>
+            <td>Clínica El Rosario</td>
+            <td>administracion@clinicarosario.com</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td>Hospital Central</td>
+            <td>compras@hospitalcentral.com</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY CENTRADO CON FLEXBOX */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* CONTENEDOR LOGIN */
+.login-container{
+    background:white;
+    padding:40px;
+    width:90%;
+    max-width:400px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* TITULO */
+.login-container h2{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+/* FORMULARIO */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* INPUTS */
+form input{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+    transition:0.3s;
+}
+
+form input:focus{
+    border-color:#667eea;
+    outline:none;
+    box-shadow:0 0 5px rgba(102,126,234,0.5);
+}
+
+/* BOTON */
+form button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#667eea;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#5563c1;
+}
+
+/* MENSAJE ERROR */
+#error{
+    text-align:center;
+    font-size:14px;
+}
+
+/* RESPONSIVIDAD */
+@media(max-width:480px){
+    .login-container{
+        padding:25px;
+    }
+
+    .login-container h2{
+        font-size:20px;
+    }
+
+    form button{
+        font-size:14px;
+    }
+}
+.error{
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* LAYOUT PRINCIPAL */
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    background:#2f3542;
+    color:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.sidebar h2{
+    margin-bottom:5px;
+}
+
+.sidebar .subtitle{
+    font-size:14px;
+    margin-bottom:20px;
+    color:#ccc;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar nav a{
+    text-decoration:none;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active{
+    background:#57606f;
+}
+
+.logout{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#ff4757;
+    color:white;
+    cursor:pointer;
+}
+
+
+.content{
+    flex:1;
+    padding:30px;
+    background:#f1f2f6;
+}
+
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    flex:1;
+    min-width:200px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card p{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+
+.table-container{
+    margin-top:30px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+.estado{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.bajo{
+    background:orange;
+    color:white;
+}
+
+.critico{
+    background:red;
+    color:white;
+}
+
+
+@media(max-width:768px){
+    .layout{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    .sidebar nav{
+        flex-direction:row;
+    }
+
+    .cards{
+        flex-direction:column;
+    }
+}
+
+.header-clientes{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.acciones-top{
+    display:flex;
+    gap:10px;
+}
+
+/* BOTONES */
+.btn-primario{
+    background:#3742fa;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-secundario{
+    background:#ced6e0;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-tabla{
+    padding:5px 10px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.editar{
+    background:#ffa502;
+    color:white;
+}
+
+.eliminar{
+    background:#ff4757;
+    color:white;
+}
+
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:700px;
+  padding:20px;
+  border-radius:10px;
+  position:relative;
+}
+
+.cerrar{
+  position:absolute;
+  right:15px;
+  top:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.form-producto{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.form-producto input,
+.form-producto textarea{
+  flex:1 1 45%;
+  padding:8px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.form-producto textarea{
+  flex:1 1 100%;
+  resize:none;
+}
+
+.botones-modal{
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: #fff;
+  width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 6px;
+}
+
+.btn-vender {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+/* ESTADOS DE PRODUCTOS */
+.estado{
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+}
+
+/* VERDE */
+.estado.bueno{
+  background-color: #e6f7ee;
+  color: #1e8449;
+}
+
+/* ROJO */
+.estado.critico{
+  background-color: #fdecea;
+  color: #c0392b;
+}
